@@ -154,7 +154,7 @@ const CorporateHeader = () => {
                 <FaPhone />
               </a>
               <Link
-                href={`https://wa.me/${contactNumber}`}
+                href={`https://wa.me/+88${contactNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-200 transition-colors"
