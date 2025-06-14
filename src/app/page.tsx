@@ -1,4 +1,5 @@
 import Banner from "@/components/Homepage/Banner"
+import FAQ from "@/components/Homepage/FAQ"
 import Services from "@/components/Homepage/Services"
 
 export const dynamic = 'force-dynamic'
@@ -11,6 +12,7 @@ export default function Home() {
         <Banner />
       </div>
       <Services/>
+      <FAQ/>
 
     </>
   )
