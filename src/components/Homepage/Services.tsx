@@ -1,0 +1,160 @@
+import Image from "next/image";
+import Link from "next/link";
+
+interface ServiceCard {
+  title: string;
+  subtitle: string;
+  icon: string;
+}
+
+const Services = () => {
+  const services: ServiceCard[] = [
+    {
+      title: "Tax & VAT Consultancy",
+      subtitle: "Expert guidance on tax compliance and optimization",
+      icon: "/icons/1.png",
+    },
+    {
+      title: "Trade License & Trademark",
+      subtitle: "Complete business registration and protection services",
+      icon: "/icons/2.jpg",
+    },
+    {
+      title: "Export & Import License",
+      subtitle: "Streamlined solutions for international trade",
+      icon: "/icons/3.jpg",
+    },
+    {
+      title: "Accounting Service",
+      subtitle: "Professional financial record keeping",
+      icon: "/icons/4.webp",
+    },
+    {
+      title: "Company Audit",
+      subtitle: "Comprehensive financial examination services",
+      icon: "/icons/5.jpg",
+    },
+    {
+      title: "Company Registration",
+      subtitle: "End-to-end business incorporation assistance",
+      icon: "/icons/6.jpg",
+    },
+    {
+      title: "Company Profile",
+      subtitle: "Professional business profile development",
+      icon: "/icons/7.jpg",
+    },
+    {
+      title: "Loan Processing",
+      subtitle: "Efficient business financing solutions",
+      icon: "/icons/8.jpg",
+    },
+    {
+      title: "Advisory Services",
+      subtitle: "Strategic business consulting",
+      icon: "/icons/9.webp",
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0D1542] mb-4">
+           Professional Services
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comprehensive business services to help your company grow and comply with regulations
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col"
+            >
+              {/* Service Image - Full width at top */}
+              <div className="relative w-full h-48 bg-gray-100">
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              
+              {/* Service Content */}
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-xl font-bold text-[#0D1542] mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-4 flex-grow">{service.subtitle}</p>
+                <Link
+                  href="/contact"
+                  className="inline-block px-6 py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-sm font-medium text-center"
+                  aria-label={`Learn more about ${service.title}`}
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Contact CTA */}
+        <div className="mt-16 text-center bg-[#0D1542] rounded-lg p-8 text-white">
+          <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
+          <p className="mb-6 max-w-2xl mx-auto">
+            Contact us today for professional business solutions tailored to your needs
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a
+              href="tel:01909221707"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              01909221707
+            </a>
+            <a
+              href="mailto:Corporatesolutionctg@gmail.com"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+            >
+              <MailIcon className="h-5 w-5" />
+              Corporatesolutionctg@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Icon Components
+const PhoneIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+  </svg>
+);
+
+const MailIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+  </svg>
+);
+
+export default Services;

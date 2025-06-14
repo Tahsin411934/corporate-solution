@@ -1,10 +1,17 @@
-export const dynamic = 'force-dynamic' 
+import Banner from "@/components/Homepage/Banner"
+import Services from "@/components/Homepage/Services"
+
+export const dynamic = 'force-dynamic'
 
 
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline">
-     
-    </h1>
+    <>
+      <div className="pt-16">
+        <Banner />
+      </div>
+      <Services/>
+
+    </>
   )
 }
