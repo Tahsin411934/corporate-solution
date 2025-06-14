@@ -60,42 +60,44 @@ const Services = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0D1542] mb-4">
-           Professional Services
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D1542] mb-3 sm:mb-4">
+            Professional Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Comprehensive business services to help your company grow and comply with regulations
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-5 md:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col"
             >
               {/* Service Image - Full width at top */}
-              <div className="relative w-full h-48 bg-gray-100">
+              <div className="relative w-full h-40 sm:h-36 md:h-48 bg-gray-100">
                 <Image
                   src={service.icon}
                   alt={service.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
               
               {/* Service Content */}
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-[#0D1542] mb-2">
+              <div className="p-4 sm:p-5 md:p-6 flex-grow flex flex-col">
+                <h3 className="text-lg sm:text-base md:text-xl font-bold text-[#0D1542] mb-1 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4 flex-grow">{service.subtitle}</p>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
+                  {service.subtitle}
+                </p>
                 <Link
                   href="/contact"
-                  className="inline-block px-6 py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-sm font-medium text-center"
+                  className="inline-block px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 md:py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-xs sm:text-sm font-medium text-center"
                   aria-label={`Learn more about ${service.title}`}
                 >
                   Learn More
@@ -106,24 +108,24 @@ const Services = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-16 text-center bg-[#0D1542] rounded-lg p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
-          <p className="mb-6 max-w-2xl mx-auto">
+        <div className="mt-12 sm:mt-16 text-center bg-[#0D1542] rounded-lg p-6 sm:p-8 text-white">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to get started?</h3>
+          <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
             Contact us today for professional business solutions tailored to your needs
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
             <a
               href="tel:01909221707"
-              className="flex items-center gap-2 bg-white text-[#0D1542] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm"
             >
-              <PhoneIcon className="h-5 w-5" />
+              <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               01909221707
             </a>
             <a
               href="mailto:Corporatesolutionctg@gmail.com"
-              className="flex items-center gap-2 bg-white text-[#0D1542] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm"
             >
-              <MailIcon className="h-5 w-5" />
+              <MailIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               Corporatesolutionctg@gmail.com
             </a>
           </div>
