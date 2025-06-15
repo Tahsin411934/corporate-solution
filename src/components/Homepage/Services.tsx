@@ -57,13 +57,16 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="services">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D1542] mb-3 sm:mb-4">
             Professional Services
           </h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+            Comprehensive business solutions tailored to meet your specific needs and drive growth
+          </p>
           <div className="w-20 h-1 bg-[#005FA5] mx-auto mt-4"></div>
         </div>
 
@@ -78,7 +81,7 @@ const Services = () => {
               }`}
             >
               {/* Service Image - Full width at top */}
-              <div className="relative w-full h-40 sm:h-36 md:h-48 bg-gray-100">
+              <div className="relative w-full h-32 md:h-48 bg-gray-100">
                 <Image
                   src={service.icon}
                   alt={service.title}
@@ -93,7 +96,7 @@ const Services = () => {
                 <h3 className="text-lg sm:text-base md:text-xl font-bold text-[#0D1542] mb-1 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
+                <p className="text-xs hidden md:flex sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
                   {service.subtitle}
                 </p>
                 <Link

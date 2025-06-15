@@ -10,6 +10,13 @@ const TrustedClients = () => {
     { name: "Bashundhara Group", logo: "/clients/bashundhara.jpg" },
   ];
 
+  const stats = [
+    { value: "13+", label: "Years of Industry Experience", icon: "🏆" },
+    { value: "50000+", label: "Enterprise Clients Served", icon: "🏢" },
+    { value: "100%", label: "Client Satisfaction Rate", icon: "⭐" },
+    { value: "24/7", label: "Dedicated Support", icon: "🛡️" },
+  ];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +26,7 @@ const TrustedClients = () => {
             Trusted By Industry Leaders
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            We&apos;re proud to partner with some of the most respected organizations in the region
+            We partner with Bangladesh's most respected organizations to deliver exceptional results
           </p>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -29,7 +36,7 @@ const TrustedClients = () => {
           {clients.map((client, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-100"
+              className="group flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100"
             >
               <div className="relative w-full h-20 mb-3">
                 <Image
@@ -40,35 +47,33 @@ const TrustedClients = () => {
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 16vw"
                 />
               </div>
-              <span className="text-sm font-medium text-gray-600 text-center  transition-opacity duration-300">
+              <span className="text-sm font-medium text-gray-600 text-center transition-opacity duration-300">
                 {client.name}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Trust Badges */}
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-6">
-          <div className="flex flex-col items-center justify-center bg-white px-8 py-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100 min-w-[180px]">
-            <div className="text-4xl font-bold text-blue-600">13+</div>
-            <div className="text-sm font-medium text-gray-600 mt-2 text-center">
-              Years of Excellence
-            </div>
-          </div>
+        {/* Professional Trust Badges */}
+        <div className="mt-16">
+          <h3 className="text-center text-xl font-semibold text-gray-700 mb-8">
+            Our Commitment to Excellence
+          </h3>
           
-          <div className="flex flex-col items-center justify-center bg-white px-8 py-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100 min-w-[180px]">
-            <div className="text-4xl font-bold text-blue-600">500+</div>
-            <div className="text-sm font-medium text-gray-600 mt-2 text-center">
-              Satisfied Clients
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100 text-center"
+              >
+                <div className="text-4xl mb-3">{stat.icon}</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
+                <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+              </div>
+            ))}
           </div>
+
           
-          <div className="flex flex-col items-center justify-center bg-white px-8 py-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100 min-w-[180px]">
-            <div className="text-4xl font-bold text-blue-600">100%</div>
-            <div className="text-sm font-medium text-gray-600 mt-2 text-center">
-              Client Retention
-            </div>
-          </div>
         </div>
       </div>
     </section>
