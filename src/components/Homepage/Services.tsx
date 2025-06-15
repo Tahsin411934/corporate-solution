@@ -65,17 +65,17 @@ const Services = () => {
             Professional Services
           </h2>
           <div className="w-20 h-1 bg-[#005FA5] mx-auto mt-4"></div>
-          {/* <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive business services to help your company grow and comply with regulations
-          </p> */}
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-5 md:gap-8">
+        {/* Services Grid - Shows 8 cards on sm/md, 9 on lg+ */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-5 md:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2  flex flex-col"
+              className={`bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col ${
+                // Hide the 9th card on small/medium screens
+                index === 8 ? "hidden lg:flex" : ""
+              }`}
             >
               {/* Service Image - Full width at top */}
               <div className="relative w-full h-40 sm:h-36 md:h-48 bg-gray-100">
@@ -93,7 +93,7 @@ const Services = () => {
                 <h3 className="text-lg sm:text-base md:text-xl font-bold text-[#0D1542] mb-1 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-xs hidden lg:flex sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 lg:flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
                   {service.subtitle}
                 </p>
                 <Link
@@ -101,7 +101,7 @@ const Services = () => {
                   className="inline-block px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 md:py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-xs sm:text-sm font-medium text-center"
                   aria-label={`Learn more about ${service.title}`}
                 >
-                  Learn More
+                  Book Now
                 </Link>
               </div>
             </div>
@@ -117,14 +117,14 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
             <a
               href="tel:01909221707"
-              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
             >
               <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               01909221707
             </a>
             <a
               href="mailto:Corporatesolutionctg@gmail.com"
-              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
             >
               <MailIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               Corporatesolutionctg@gmail.com
