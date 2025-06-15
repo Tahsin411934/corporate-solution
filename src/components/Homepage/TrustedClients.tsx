@@ -40,7 +40,7 @@ const TrustedClients = () => {
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 16vw"
                 />
               </div>
-              <span className="text-sm font-medium text-gray-600 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-sm font-medium text-gray-600 text-center  transition-opacity duration-300">
                 {client.name}
               </span>
             </div>
