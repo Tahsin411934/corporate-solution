@@ -8,7 +8,7 @@ const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [displayText, setDisplayText] = useState<string>("");
   const [isTyping, setIsTyping] = useState<boolean>(true);
-  const fullText = "13 Years of Professional Experience";
+  const fullText = " Professional Experience";
   
   const images = [
     "/banner2.jpg", // Replace with your actual image paths
@@ -101,7 +101,7 @@ const Banner = () => {
       {/* Content overlay */}
       <div className="relative z-[2] h-full flex flex-col justify-center items-start px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-white">
         <p className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 uppercase tracking-wider text-blue-200 min-h-[24px]">
-          {displayText}
+         13 Years of {displayText}
           <span className={`inline-block w-1 h-5 sm:h-6 bg-blue-400 ml-1 align-middle ${isTyping ? 'opacity-100' : 'opacity-0'}`}></span>
         </p>
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight mb-2 sm:mb-4 max-w-3xl">
