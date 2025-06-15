@@ -19,7 +19,7 @@ const TrustedClients = () => {
             Trusted By Industry Leaders
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            We're proud to partner with some of the most respected organizations in the region
+            We&apos;re proud to partner with some of the most respected organizations in the region
           </p>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -40,7 +40,7 @@ const TrustedClients = () => {
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 16vw"
                 />
               </div>
-              <span className="text-sm font-medium text-gray-600 text-center opacity-100 transition-opacity duration-300">
+              <span className="text-sm font-medium text-gray-600 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {client.name}
               </span>
             </div>
