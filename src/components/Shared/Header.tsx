@@ -285,7 +285,16 @@ const CorporateHeader = () => {
                     <FaChevronRight className="text-blue-400 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </li>
-                
+                <li>
+                  <Link
+                    href="/about"
+                    className="flex items-center justify-between py-3 px-4 text-[#00026E] hover:bg-blue-50 rounded-lg transition-colors duration-200 group"
+                    onClick={closeMobileMenu}
+                  >
+                    <span className="font-medium">About Us</span>
+                    <FaChevronRight className="text-blue-400 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/client/login"

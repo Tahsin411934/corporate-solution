@@ -157,7 +157,7 @@ export default function ContactPage() {
       </p>
       <div className="mt-4">
         <a
-          href="https://goo.gl/maps/XYZ123"  // Replace with your actual Google Maps link
+          href="https://goo.gl/maps/Agrabadhttps://www.google.com/maps/search/TSN+Complex+89%2F90,+Agrabad+C%2FA+Chittagong,/@22.3237516,91.8083468,16z/data=!3m1!4b1?hl=en&entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"  // Replace with your actual Google Maps link
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline font-medium inline-flex items-center"
