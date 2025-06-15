@@ -5,10 +5,18 @@ export default function ContactPage() {
   return (
     <div className="bg-gray-50 pt-16 min-h-screen">
       {/* Hero Section with Image Overlay */}
-      <div className="relative bg-blue-900 text-white py-24 md:py-32">
+      <div className="relative  text-white py-24 md:py-32">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 bg-[url('/images/office-building.jpg')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
+        <div 
+          className="absolute inset-0 bg-[url('/banner3.png')] bg-cover bg-center "
+          style={{
+            backgroundImage: "url('/banner3.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            
+          }}
+        ></div>
+        <div className="absolute inset-0  "></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Corporate Solutions</h1>
@@ -126,32 +134,43 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Map Embed */}
-      <div className="bg-gray-100 py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Our Location</h2>
-          <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6890555627646!2d91.8253143154463!3d22.338526847127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89b5e0e6a1f%3A0x9a5b3b3b3b3b3b3b!2sTSN%20Complex%2C%2089%2F90%2C%20Agrabad%20C%2FA%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              className="rounded-lg"
-              title="Corporate Solutions Location"
-            ></iframe>
-          </div>
-          <div className="mt-6 md:mt-8 text-center">
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-              Our office is conveniently located in the heart of Agrabad Commercial Area, 
-              with easy access to parking and public transportation.
-            </p>
-          </div>
-        </div>
+     {/* Map Embed */}
+<div className="bg-gray-100 py-12 md:py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Our Location</h2>
+    <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6890555627646!2d91.8253143154463!3d22.338526847127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89b5e0e6a1f%3A0x9a5b3b3b3b3b3b3b!2sAgrabad%20Commercial%20Area%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
+        width="100%"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        className="rounded-lg"
+        title="Corporate Solutions Location in Agrabad"
+      ></iframe>
+    </div>
+    <div className="mt-6 md:mt-8 text-center">
+      <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+        Our office is located in the heart of Agrabad Commercial Area at TSN Complex,
+        with easy access to parking and public transportation.
+      </p>
+      <div className="mt-4">
+        <a
+          href="https://goo.gl/maps/XYZ123"  // Replace with your actual Google Maps link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline font-medium inline-flex items-center"
+        >
+          Open in Google Maps
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
       </div>
-
-     
+    </div>
+  </div>
+</div>
     </div>
   );
 }
