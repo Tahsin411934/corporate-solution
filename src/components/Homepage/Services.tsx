@@ -64,9 +64,10 @@ const Services = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D1542] mb-3 sm:mb-4">
             Professional Services
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-[#005FA5] mx-auto mt-4"></div>
+          {/* <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Comprehensive business services to help your company grow and comply with regulations
-          </p>
+          </p> */}
         </div>
 
         {/* Services Grid */}
@@ -74,7 +75,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col"
+              className="bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2  flex flex-col"
             >
               {/* Service Image - Full width at top */}
               <div className="relative w-full h-40 sm:h-36 md:h-48 bg-gray-100">
@@ -82,7 +83,7 @@ const Services = () => {
                   src={service.icon}
                   alt={service.title}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
@@ -92,7 +93,7 @@ const Services = () => {
                 <h3 className="text-lg sm:text-base md:text-xl font-bold text-[#0D1542] mb-1 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
+                <p className="text-xs hidden sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 lg:flex-grow">
                   {service.subtitle}
                 </p>
                 <Link
