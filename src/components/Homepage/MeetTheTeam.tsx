@@ -19,20 +19,21 @@ const MeetTheTeam = () => {
         {/* CEO Profile */}
         <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl overflow-hidden shadow-lg">
           <div className="md:flex">
-            {/* Profile Image */}
-            <div className="md:w-1/3 relative h-80 md:h-auto">
+            {/* Profile Image - Updated for mobile responsiveness */}
+            <div className="md:w-1/3 relative h-96 md:h-auto">
               <Image
                 src="/ceo.jpg" // Replace with your CEO's image
-                alt="Mr. Rahman, Founder & CEO"
+                alt="Mr. Jahid Hossain, Founder & CEO"
                 fill
-                className="object-cover"
+                className="object-cover object-top md:object-center"
                 sizes="(max-width: 768px) 100vw, 33vw"
                 priority
+                style={{ objectPosition: 'top' }}
               />
             </div>
             
             {/* Profile Content */}
-            <div className="md:w-2/3 p-8 md:p-10">
+            <div className="md:w-2/3 p-6 md:p-10">
               <div className="uppercase tracking-wide text-sm text-[#005FA5] font-semibold mb-1">
                 Founder & CEO
               </div>

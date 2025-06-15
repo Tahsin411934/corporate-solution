@@ -8,17 +8,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center">
+           <div className="flex items-center">
               <Image
-                src="/whitelogo.jpg" // Replace with your white logo
+                src="/bannerwhite.png" // Replace with your white logo
                 alt="Corporate Solutions"
-                width={300}
+                width={180}
                 height={100}
-                className="h-36 object-contain"
+                className="p-2 rounded-3xl border border-e-amber-200"
               />
             </div>
             <p className="text-gray-300">
-              Providing corporate solutions 
+              Providing comprehensive corporate solutions to help your business grow and comply with regulations.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
