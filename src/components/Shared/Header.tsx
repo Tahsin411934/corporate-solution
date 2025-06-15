@@ -40,7 +40,7 @@ const CorporateHeader = () => {
                 priority
               />
             </div>
-            <span className="lg:text-2xl text-lg font-bold italic text-[#00026E] ">CORPORATE <span className="text-yellow-600">SOLUTION</span> </span>
+            <span className="lg:text-2xl text-base font-bold italic text-[#00026E] ">CORPORATE <span className="text-yellow-600">SOLUTION</span> </span>
           </Link>
 
           {/* Desktop Navigation */}

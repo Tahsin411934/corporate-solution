@@ -45,7 +45,7 @@ const MeetTheTeam = () => {
               
               <div className="prose text-gray-600 mb-6">
                 <p>
-                  As the visionary founder of Corporate Solutions, Mr. Rahman brings over 
+                  As the visionary founder of Corporate Solutions, Mr. Jahid Hossain brings over 
                   a decade of expertise in corporate advisory and financial consultancy. 
                   His leadership has guided hundreds of businesses through successful 
                   registrations, compliance processes, and strategic growth initiatives.
