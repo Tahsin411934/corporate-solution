@@ -10,15 +10,15 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <Image
-                src="/logo.png" // Replace with your white logo
+                src="/whitelogo.jpg" // Replace with your white logo
                 alt="Corporate Solutions"
-                width={180}
-                height={40}
-                className="h-10 object-contain"
+                width={300}
+                height={100}
+                className="h-36 object-contain"
               />
             </div>
             <p className="text-gray-300">
-              Providing comprehensive corporate solutions to help your business grow and comply with regulations.
+              Providing corporate solutions 
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
