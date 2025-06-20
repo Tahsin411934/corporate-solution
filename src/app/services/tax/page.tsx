@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { BiPhoneIncoming } from 'react-icons/bi';
+import { TbMailBitcoin } from 'react-icons/tb';
 
 export const metadata: Metadata = {
   title: "Tax & VAT Consultancy Services | Corporate Solution",
@@ -15,7 +17,7 @@ export default function TaxVatConsultancyPage() {
         <div 
           className="absolute inset-0 bg-[url('/banner3.png')] bg-cover bg-center "
           style={{
-            backgroundImage: "url('/banner3.png')",
+            backgroundImage: "url('/banner2.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             
@@ -23,8 +25,8 @@ export default function TaxVatConsultancyPage() {
         ></div>
         <div className="absolute inset-0  "></div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-xl md:text-4xl font-bold mb-4">Tax & VAT Consultancy</h1>
+        <div className="container mx-auto px-4 top-6 text-center relative z-10">
+          <h1 className="text-xl md:text-4xl  font-bold mb-4">Tax & VAT Consultancy</h1>
           <p className="text-sm md:text-xl max-w-2xl mx-auto">
             Expert guidance for VAT registration, tax filing, and compliance solutions tailored for your business
           </p>
@@ -130,36 +132,29 @@ export default function TaxVatConsultancyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-950 text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">Need Expert Tax Assistance?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our certified tax consultants are ready to help with your VAT and tax requirements
+      {/* Contact CTA */}
+        <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542] rounded-lg p-6 sm:p-8 text-white">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to get started?</h3>
+          <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
+            Contact us today for professional business solutions tailored to your needs
           </p>
-          <div className="flex justify-center gap-4">
-            <a 
-              href="tel:01909221707" 
-              className="bg-white text-blue-950 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition"
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
+            <a
+              href="tel:01909221707"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
             >
-              Call Now
+              <BiPhoneIncoming className="h-4 w-4 sm:h-5 sm:w-5" />
+              01909221707
             </a>
-            <a 
-              href="mailto:corporatesolutionctg@gmail.com" 
-              className="border-2 border-white hover:bg-white hover:text-blue-950 px-6 py-3 rounded-lg font-semibold transition"
+            <a
+              href="mailto:Corporatesolutionctg@gmail.com"
+              className="flex items-center gap-2 bg-white text-[#0D1542] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
             >
-              Email Us
-            </a>
-             <a 
-              href="https://wa.me/8801909221707" 
-              className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2"
-            >
-              
-              WhatsApp Chat
+              <TbMailBitcoin className="h-4 w-4 sm:h-5 sm:w-5" />
+              Corporatesolutionctg@gmail.com
             </a>
           </div>
-        <div className='text-center mt-4 text-xl '>Phone: 01909221707</div>
         </div>
-      </section>
     </main>
   );
 }
