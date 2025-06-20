@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaPhone, FaWhatsapp } from "react-icons/fa";
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -11,7 +12,7 @@ const Banner = () => {
   const fullText = " Professional Experience";
   
   const images = [
-    "/banner2.jpg", // Replace with your actual image paths
+    "/banner2.jpg",
     "/banner.gif",
     "/banner3.png",
     "/banner4.png"
@@ -36,10 +37,9 @@ const Banner = () => {
       if (currentIndex <= fullText.length) {
         setDisplayText(fullText.substring(0, currentIndex));
         currentIndex++;
-        typingInterval = setTimeout(typeText, 100); // Adjust typing speed here
+        typingInterval = setTimeout(typeText, 100);
       } else {
         setIsTyping(false);
-        // Wait for 3 seconds before starting to delete
         setTimeout(() => {
           setIsTyping(true);
           deleteText();
@@ -51,10 +51,9 @@ const Banner = () => {
       if (currentIndex >= 0) {
         setDisplayText(fullText.substring(0, currentIndex));
         currentIndex--;
-        typingInterval = setTimeout(deleteText, 50); // Adjust deleting speed here
+        typingInterval = setTimeout(deleteText, 50);
       } else {
         setIsTyping(true);
-        // Wait for 1 second before starting to type again
         setTimeout(typeText, 1000);
       }
     };
@@ -100,23 +99,46 @@ const Banner = () => {
 
       {/* Content overlay */}
       <div className="relative z-[2] h-full flex flex-col justify-center items-start px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-white">
-        <p className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 uppercase tracking-wider text-blue-200 min-h-[24px]">
-         13 Years of {displayText}
-          <span className={`inline-block w-1 h-5 sm:h-6 bg-blue-400 ml-1 align-middle ${isTyping ? 'opacity-100' : 'opacity-0'}`}></span>
-        </p>
+        
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight mb-2 sm:mb-4 max-w-3xl">
           License & Registration, VAT & Taxation, Legal Services
         </h1>
         <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-gray-100">
           Expert consultation for all your business needs
         </p>
-        <Link
+        <p className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 uppercase tracking-wider text-blue-200 min-h-[24px]">
+         13 Years of {displayText}
+          <span className={`inline-block w-1 h-5 sm:h-6 bg-blue-400 ml-1 align-middle ${isTyping ? 'opacity-100' : 'opacity-0'}`}></span>
+        </p>
+        <div className="flex flex-row gap-2 w-full sm:w-auto">
+           <Link
           href="/contact"
           className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#005FA5] hover:bg-blue-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
           aria-label="Book your services now"
         >
           Book Your Services
         </Link>
+          
+          <a
+            href="tel:+1234567890"
+            className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-green-600 hover:bg-green-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"
+            aria-label="Call us"
+          >
+            <FaPhone className="text-sm sm:text-base" />
+            <span className="hidden sm:inline">Call Us</span>
+          </a>
+          
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"
+            aria-label="Chat on WhatsApp"
+          >
+            <FaWhatsapp className="text-sm sm:text-base" />
+            <span className="hidden sm:inline">WhatsApp</span>
+          </a>
+        </div>
       </div>
 
       {/* Slide indicators (dots) - Smaller on mobile */}
