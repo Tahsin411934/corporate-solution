@@ -6,20 +6,20 @@ import Link from "next/link";
 import { FaPhone, FaWhatsapp, FaBars, FaTimes, FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 const CorporateHeader = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const [isClientAreaOpen, setIsClientAreaOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState<boolean>(false);
+  const [isClientAreaOpen, setIsClientAreaOpen] = useState<boolean>(false);
   
-  const servicesRef = useRef(null);
-  const companyRef = useRef(null);
-  const clientAreaRef = useRef(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const companyRef = useRef<HTMLDivElement>(null);
+  const clientAreaRef = useRef<HTMLDivElement>(null);
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (): void => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const toggleServices = () => {
+  const toggleServices = (): void => {
     setIsServicesOpen(!isServicesOpen);
     // Close other dropdowns when opening this one
     if (!isServicesOpen) {
@@ -28,7 +28,7 @@ const CorporateHeader = () => {
     }
   };
 
-  const toggleCompany = () => {
+  const toggleCompany = (): void => {
     setIsCompanyOpen(!isCompanyOpen);
     // Close other dropdowns when opening this one
     if (!isCompanyOpen) {
@@ -37,7 +37,7 @@ const CorporateHeader = () => {
     }
   };
 
-  const toggleClientArea = () => {
+  const toggleClientArea = (): void => {
     setIsClientAreaOpen(!isClientAreaOpen);
     // Close other dropdowns when opening this one
     if (!isClientAreaOpen) {
@@ -46,30 +46,30 @@ const CorporateHeader = () => {
     }
   };
 
-  const closeAllDropdowns = () => {
+  const closeAllDropdowns = (): void => {
     setIsServicesOpen(false);
     setIsCompanyOpen(false);
     setIsClientAreaOpen(false);
   };
 
-  const closeMobileMenu = () => {
+  const closeMobileMenu = (): void => {
     setIsMobileMenuOpen(false);
     closeAllDropdowns();
   };
 
   // Static contact number
-  const contactNumber = "01909221707";
+  const contactNumber: string = "01909221707";
 
   // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
       }
-      if (companyRef.current && !companyRef.current.contains(event.target)) {
+      if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
         setIsCompanyOpen(false);
       }
-      if (clientAreaRef.current && !clientAreaRef.current.contains(event.target)) {
+      if (clientAreaRef.current && !clientAreaRef.current.contains(event.target as Node)) {
         setIsClientAreaOpen(false);
       }
     };
@@ -108,11 +108,16 @@ const CorporateHeader = () => {
               <button 
                 className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
                 onClick={toggleCompany}
+                aria-expanded={isCompanyOpen}
+                aria-controls="company-dropdown"
               >
                 Company
                 <FaChevronDown className={`ml-1 text-xs transition-transform ${isCompanyOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`absolute ${isCompanyOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 z-30`}>
+              <div 
+                id="company-dropdown"
+                className={`absolute ${isCompanyOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 z-30`}
+              >
                 <Link 
                   href="/about" 
                   className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
@@ -141,11 +146,16 @@ const CorporateHeader = () => {
               <button 
                 className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
                 onClick={toggleServices}
+                aria-expanded={isServicesOpen}
+                aria-controls="services-dropdown"
               >
                 Our Services
                 <FaChevronDown className={`ml-1 text-xs transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`absolute ${isServicesOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-56 z-30`}>
+              <div 
+                id="services-dropdown"
+                className={`absolute ${isServicesOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-56 z-30`}
+              >
                 <Link 
                   href="/services/tax" 
                   className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
@@ -196,11 +206,16 @@ const CorporateHeader = () => {
               <button 
                 className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
                 onClick={toggleClientArea}
+                aria-expanded={isClientAreaOpen}
+                aria-controls="client-area-dropdown"
               >
                 Client Area
                 <FaChevronDown className={`ml-1 text-xs transition-transform ${isClientAreaOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`absolute ${isClientAreaOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 right-0 z-30`}>
+              <div 
+                id="client-area-dropdown"
+                className={`absolute ${isClientAreaOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 right-0 z-30`}
+              >
                 <Link 
                   href="/client/login" 
                   className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
@@ -275,6 +290,7 @@ const CorporateHeader = () => {
               onClick={toggleMobileMenu}
               className="text-[#00026E] focus:outline-none"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <FaTimes className="w-6 h-6" />
@@ -287,7 +303,10 @@ const CorporateHeader = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-10 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+      <div 
+        className={`lg:hidden fixed inset-0 z-10 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        aria-hidden={!isMobileMenuOpen}
+      >
         {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
@@ -315,6 +334,7 @@ const CorporateHeader = () => {
               <button 
                 onClick={closeMobileMenu}
                 className="text-[#00026E] p-2 focus:outline-none hover:bg-gray-100 rounded-full"
+                aria-label="Close menu"
               >
                 <FaTimes className="w-5 h-5" />
               </button>
@@ -350,6 +370,7 @@ const CorporateHeader = () => {
                     <button 
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
                       className="flex items-center justify-between py-3 px-4 text-[#00026E] hover:bg-blue-50 rounded-lg transition-colors duration-200 group"
+                      aria-expanded={isServicesOpen}
                     >
                       <span className="font-medium">Our Services</span>
                       <FaChevronRight className={`text-blue-400 transition-transform duration-200 ${isServicesOpen ? 'rotate-90' : ''}`} />
