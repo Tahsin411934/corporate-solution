@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhone, FaWhatsapp, FaBars, FaTimes, FaChevronRight, FaChevronDown } from "react-icons/fa";
@@ -8,6 +8,12 @@ import { FaPhone, FaWhatsapp, FaBars, FaTimes, FaChevronRight, FaChevronDown } f
 const CorporateHeader = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isClientAreaOpen, setIsClientAreaOpen] = useState(false);
+  
+  const servicesRef = useRef(null);
+  const companyRef = useRef(null);
+  const clientAreaRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -15,15 +21,64 @@ const CorporateHeader = () => {
 
   const toggleServices = () => {
     setIsServicesOpen(!isServicesOpen);
+    // Close other dropdowns when opening this one
+    if (!isServicesOpen) {
+      setIsCompanyOpen(false);
+      setIsClientAreaOpen(false);
+    }
+  };
+
+  const toggleCompany = () => {
+    setIsCompanyOpen(!isCompanyOpen);
+    // Close other dropdowns when opening this one
+    if (!isCompanyOpen) {
+      setIsServicesOpen(false);
+      setIsClientAreaOpen(false);
+    }
+  };
+
+  const toggleClientArea = () => {
+    setIsClientAreaOpen(!isClientAreaOpen);
+    // Close other dropdowns when opening this one
+    if (!isClientAreaOpen) {
+      setIsServicesOpen(false);
+      setIsCompanyOpen(false);
+    }
+  };
+
+  const closeAllDropdowns = () => {
+    setIsServicesOpen(false);
+    setIsCompanyOpen(false);
+    setIsClientAreaOpen(false);
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
-    setIsServicesOpen(false);
+    closeAllDropdowns();
   };
 
   // Static contact number
   const contactNumber = "01909221707";
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setIsServicesOpen(false);
+      }
+      if (companyRef.current && !companyRef.current.contains(event.target)) {
+        setIsCompanyOpen(false);
+      }
+      if (clientAreaRef.current && !clientAreaRef.current.contains(event.target)) {
+        setIsClientAreaOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-white fixed w-full z-20 shadow-md">
@@ -49,25 +104,40 @@ const CorporateHeader = () => {
               Home
             </Link>
             
-            <div className="group relative">
-              <button className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center">
+            <div className="relative" ref={companyRef}>
+              <button 
+                className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
+                onClick={toggleCompany}
+              >
                 Company
-                <FaChevronDown className="ml-1 text-xs" />
+                <FaChevronDown className={`ml-1 text-xs transition-transform ${isCompanyOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-1 py-1 w-48 z-30">
-                <Link href="/about" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+              <div className={`absolute ${isCompanyOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 z-30`}>
+                <Link 
+                  href="/about" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   About Us
                 </Link>
-                <Link href="/team" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/team" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Our Team
                 </Link>
-                <Link href="/mission" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/mission" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Mission & Vision
                 </Link>
               </div>
             </div>
             
-            <div className="group relative">
+            <div className="relative" ref={servicesRef}>
               <button 
                 className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
                 onClick={toggleServices}
@@ -76,41 +146,80 @@ const CorporateHeader = () => {
                 <FaChevronDown className={`ml-1 text-xs transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               <div className={`absolute ${isServicesOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-56 z-30`}>
-                <Link href="/services/tax" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/services/tax" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Tax & VAT Consultancy
                 </Link>
-                <Link href="/services/registration" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/services/registration" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Company Registration
                 </Link>
-                <Link href="/services/license" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/services/license" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Trade License
                 </Link>
-                <Link href="/services/audit" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/services/audit" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Company Audit
                 </Link>
-                <Link href="/services/accounting" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/services/accounting" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Accounting Services
                 </Link>
               </div>
             </div>
             
-            <Link href="/contact" className="text-[#00026E] hover:text-blue-600 font-medium py-2 transition-colors">
+            <Link 
+              href="/contact" 
+              className="text-[#00026E] hover:text-blue-600 font-medium py-2 transition-colors"
+              onClick={closeAllDropdowns}
+            >
               Contact Us
             </Link>
             
-            <div className="group relative">
-              <button className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center">
+            <div className="relative" ref={clientAreaRef}>
+              <button 
+                className="text-[#00026E] hover:text-blue-600 font-medium py-2 flex items-center"
+                onClick={toggleClientArea}
+              >
                 Client Area
-                <FaChevronDown className="ml-1 text-xs" />
+                <FaChevronDown className={`ml-1 text-xs transition-transform ${isClientAreaOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-1 py-1 w-48 right-0 z-30">
-                <Link href="/client/login" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+              <div className={`absolute ${isClientAreaOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-1 py-1 w-48 right-0 z-30`}>
+                <Link 
+                  href="/client/login" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Client Login
                 </Link>
-                <Link href="/client/register" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/client/register" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Register
                 </Link>
-                <Link href="/client/dashboard" className="block px-4 py-2 text-[#00026E] hover:bg-blue-50">
+                <Link 
+                  href="/client/dashboard" 
+                  className="block px-4 py-2 text-[#00026E] hover:bg-blue-50"
+                  onClick={closeAllDropdowns}
+                >
                   Dashboard
                 </Link>
               </div>
@@ -123,6 +232,7 @@ const CorporateHeader = () => {
               <a 
                 href={`tel:${contactNumber}`} 
                 className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                onClick={closeAllDropdowns}
               >
                 <FaPhone />
               </a>
@@ -131,6 +241,7 @@ const CorporateHeader = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-200 transition-colors relative"
+                onClick={closeAllDropdowns}
               >
                 <span className="absolute animate-ping opacity-75 inline-flex h-full w-full rounded-full bg-green-100"></span>
                 <FaWhatsapp className="z-10" />
@@ -138,7 +249,11 @@ const CorporateHeader = () => {
             </div>
             <div>
               <p className="text-sm text-gray-600">Call Anytime</p>
-              <a href={`tel:${contactNumber}`} className="text-md font-semibold text-gray-800 hover:underline">
+              <a 
+                href={`tel:${contactNumber}`} 
+                className="text-md font-semibold text-gray-800 hover:underline"
+                onClick={closeAllDropdowns}
+              >
                 {contactNumber}
               </a>
             </div>
@@ -150,10 +265,10 @@ const CorporateHeader = () => {
               <a 
                 href={`tel:${contactNumber}`} 
                 className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                onClick={closeMobileMenu}
               >
                 <FaPhone />
               </a>
-             
             </div>
             
             <button 
@@ -220,7 +335,18 @@ const CorporateHeader = () => {
                 </li>
                 
                 <li>
-                  <div className="flex flex-col ">
+                  <Link
+                    href="/about"
+                    className="flex items-center justify-between py-3 px-4 text-[#00026E] hover:bg-blue-50 rounded-lg transition-colors duration-200 group"
+                    onClick={closeMobileMenu}
+                  >
+                    <span className="font-medium">About Us</span>
+                    <FaChevronRight className="text-blue-400 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </li>
+                
+                <li>
+                  <div className="flex flex-col">
                     <button 
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
                       className="flex items-center justify-between py-3 px-4 text-[#00026E] hover:bg-blue-50 rounded-lg transition-colors duration-200 group"
@@ -278,16 +404,7 @@ const CorporateHeader = () => {
                     <FaChevronRight className="text-blue-400 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="flex items-center justify-between py-3 px-4 text-[#00026E] hover:bg-blue-50 rounded-lg transition-colors duration-200 group"
-                    onClick={closeMobileMenu}
-                  >
-                    <span className="font-medium">About Us</span>
-                    <FaChevronRight className="text-blue-400 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </li>
+                
                 <li>
                   <Link
                     href="/client/login"
@@ -308,6 +425,7 @@ const CorporateHeader = () => {
                 <a 
                   href={`tel:${contactNumber}`} 
                   className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   <FaPhone className="text-xl" />
                 </a>
@@ -316,6 +434,7 @@ const CorporateHeader = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full text-white hover:bg-green-600 transition-colors relative"
+                  onClick={closeMobileMenu}
                 >
                   <span className="absolute animate-ping opacity-75 inline-flex h-full w-full rounded-full bg-green-400"></span>
                   <FaWhatsapp className="text-xl z-10" />
@@ -326,6 +445,7 @@ const CorporateHeader = () => {
                 <a 
                   href={`tel:${contactNumber}`} 
                   className="text-md font-semibold text-gray-800 hover:underline"
+                  onClick={closeMobileMenu}
                 >
                   {contactNumber}
                 </a>
