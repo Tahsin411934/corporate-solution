@@ -74,7 +74,7 @@ export default function CompanyAuditPage() {
               ]
             }
           ].map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
+            <div key={index} className="bg-white p-6  shadow-md border-t-4 border-blue-600">
               <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <ul className="space-y-2">
@@ -83,7 +83,7 @@ export default function CompanyAuditPage() {
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>{detail}</span>
+                    <span className='text-gray-700'>{detail}</span>
                   </li>
                 ))}
               </ul>

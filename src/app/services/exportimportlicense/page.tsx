@@ -3,11 +3,11 @@ import { BiPhoneIncoming } from 'react-icons/bi';
 import { TbMailBitcoin } from 'react-icons/tb';
 
 export const metadata: Metadata = {
-  title: "Trade License & Trademark Registration | Corporate Solution",
-  description: "Professional trade license acquisition and trademark registration services in Bangladesh. Secure your business identity legally.",
+  title: "Export & Import License Services | Corporate Solution",
+  description: "Professional export and import license registration services in Bangladesh. Streamline your international trade compliance.",
 };
 
-export default function TradeLicenseTrademarkPage() {
+export default function ExportImportLicensePage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -25,9 +25,9 @@ export default function TradeLicenseTrademarkPage() {
           <div className="absolute inset-0"></div>
           
           <div className="container mx-auto px-4 top-6 text-center relative z-10">
-            <h1 className="text-xl md:text-4xl font-bold mb-4">Trade License & Trademark Services</h1>
+            <h1 className="text-xl md:text-4xl font-bold mb-4">Export & Import License Services</h1>
             <p className="text-sm md:text-xl max-w-2xl mx-auto">
-              Legal protection and compliance solutions for your business identity and operations
+              Comprehensive solutions for your international trade compliance needs
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function TradeLicenseTrademarkPage() {
       {/* Services Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Licensing & Trademark Services</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Export & Import Services</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
@@ -44,33 +44,33 @@ export default function TradeLicenseTrademarkPage() {
           {/* Service Cards */}
           {[
             {
-              title: "Trade License",
-              description: "Complete trade license acquisition and renewal services",
+              title: "Export License",
+              description: "Complete export license acquisition and compliance services",
               details: [
-                "New trade license application",
-                "City Corporation/Municipal license",
-                "License category selection",
-                "Annual renewal processing"
+                "New export registration (ERC)",
+                "Product category classification",
+                "Export Policy guidance",
+                "Bond license facilitation"
               ]
             },
             {
-              title: "Trademark Registration",
-              description: "End-to-end trademark protection solutions",
+              title: "Import License",
+              description: "End-to-end import registration and customs clearance support",
               details: [
-                "Trademark search & verification",
-                "Application filing with DPDT",
-                "Class selection guidance",
-                "Registration certificate acquisition"
+                "IRC registration & renewal",
+                "Import Policy compliance",
+                "HS code classification",
+                "Customs documentation"
               ]
             },
             {
-              title: "Compliance Package",
-              description: "Ongoing support for business legalities",
+              title: "Trade Compliance",
+              description: "Ongoing support for international trade operations",
               details: [
-                "License renewal reminders",
-                "Trademark monitoring",
-                "Infringement protection",
-                "Documentation updates"
+                "License renewal management",
+                "Regulatory updates",
+                "Customs clearance assistance",
+                "Export-import documentation"
               ]
             }
           ].map((service, index) => (
@@ -96,7 +96,7 @@ export default function TradeLicenseTrademarkPage() {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Trade License & Trademark FAQs</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Export & Import License FAQs</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
@@ -104,24 +104,24 @@ export default function TradeLicenseTrademarkPage() {
             {/* Question Blocks */}
             {[
               {
-                question: "What documents are needed for a trade license?",
-                answer: "NID copy, passport photos, proof of business address, rental agreement (if rented space), and previous license (for renewal)."
+                question: "What documents are needed for export registration?",
+                answer: "Trade license, TIN certificate, bank certificate, company documents, and owner's NID/passport."
               },
               {
-                question: "How long does trademark registration take in Bangladesh?",
-                answer: "Typically 8-12 months from application to registration certificate issuance, if no objections are raised."
+                question: "How long does import license (IRC) processing take?",
+                answer: "Typically 7-10 working days after complete documentation submission to the relevant chamber."
               },
               {
-                question: "What are the trade license fees?",
-                answer: "Varies by location (City Corp/Municipality), business type, and size - typically between 5,000-50,000 BDT annually."
+                question: "What are the costs for export-import licenses?",
+                answer: "Varies by business type and product category - typically between 10,000-50,000 BDT for initial registration."
               },
               {
-                question: "Can foreigners register trademarks in Bangladesh?",
-                answer: "Yes, through local agents. We can represent foreign entities in the trademark registration process."
+                question: "Can individuals apply for export-import licenses?",
+                answer: "Yes, both companies and individuals can register, though requirements differ slightly."
               },
               {
-                question: "Why is trademark registration important?",
-                answer: "Protects your brand identity, prevents copying, adds business value, and is essential for franchising or selling your business."
+                question: "Why is proper HS code classification important?",
+                answer: "Ensures correct customs duties, prevents shipment delays, and avoids penalties for misclassification."
               }
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
@@ -135,9 +135,9 @@ export default function TradeLicenseTrademarkPage() {
 
       {/* CTA Section */}
       <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542]  p-6 sm:p-8 text-white">
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Secure Your Business Identity Today</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Start Your International Trade Journey</h3>
         <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
-          Get expert assistance with trade licenses and trademark registration
+          Get expert assistance with export and import license registration
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a

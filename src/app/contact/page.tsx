@@ -34,7 +34,7 @@ export default function ContactPage() {
             <div className="bg-blue-100 w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center mb-3 md:mb-4">
               <FaPhone className="text-blue-700 text-xl md:text-2xl" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">Call Us</h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 text-blue-950">Call Us</h3>
             <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">Available 24/7 for urgent inquiries</p>
             <div className="space-y-1 md:space-y-2">
               <a 
@@ -59,7 +59,7 @@ export default function ContactPage() {
             <div className="bg-blue-100 w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center mb-3 md:mb-4">
               <FaEnvelope className="text-blue-700 text-xl md:text-2xl" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">Email Us</h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-2  text-blue-950">Email Us</h3>
             <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">We respond within 24 hours</p>
             <a
               href="mailto:Corporatesolutionctg@gmail.com"
@@ -74,7 +74,7 @@ export default function ContactPage() {
             <div className="bg-blue-100 w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center mb-3 md:mb-4">
               <FaMapMarkerAlt className="text-blue-700 text-xl md:text-2xl" />
             </div>
-            <h3 className="text-lg md:text-xl font-semibold mb-2">Visit Us</h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-2  text-blue-950">Visit Us</h3>
             <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">Schedule an appointment for consultation</p>
             <address className="text-blue-700 text-sm md:text-base font-medium not-italic">
               2nd Floor, TSN Complex<br />
@@ -88,9 +88,9 @@ export default function ContactPage() {
       {/* Direct Contact CTA */}
       <div className="bg-blue-50 py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Prefer Direct Contact?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-blue-950">Prefer Direct Contact?</h2>
           <div className="max-w-2xl mx-auto">
-            <p className="text-base md:text-lg mb-6 md:mb-8">
+            <p className="text-base md:text-lg mb-6 md:mb-8 text-gray-700">
               For immediate assistance, call us directly or message us on WhatsApp. Our team is ready to help with your business needs.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
@@ -116,11 +116,11 @@ export default function ContactPage() {
       {/* Office Hours */}
       <div className="bg-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Our Office Hours</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-blue-950">Our Office Hours</h2>
           <div className="max-w-md mx-auto bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
             <div className="flex items-center justify-center mb-3 md:mb-4">
               <FaClock className="text-blue-700 text-xl md:text-2xl mr-2 md:mr-3" />
-              <span className="text-base md:text-lg font-medium">Sunday - Thursday: 9AM - 6PM</span>
+              <span className="text-base md:text-lg font-medium text-blue-950">Sunday - Thursday: 9AM - 6PM</span>
             </div>
             <p className="text-sm md:text-base text-gray-600">
               Closed on Fridays, Saturdays, and public holidays
@@ -137,7 +137,7 @@ export default function ContactPage() {
      {/* Map Embed */}
 <div className="bg-gray-100 py-12 md:py-16">
   <div className="container mx-auto px-4">
-    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Our Location</h2>
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-blue-950">Our Location</h2>
     <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6890555627646!2d91.8253143154463!3d22.338526847127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89b5e0e6a1f%3A0x9a5b3b3b3b3b3b3b!2sAgrabad%20Commercial%20Area%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"

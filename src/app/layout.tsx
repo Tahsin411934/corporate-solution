@@ -73,6 +73,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="white">
       <body className={`${inter.className} bg-white text-gray-900`}>
+        <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" /> 
+        </head>
         <Header />
         <main className="min-h-[calc(100vh-140px)]">
           {children}

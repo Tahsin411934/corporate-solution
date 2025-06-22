@@ -12,9 +12,9 @@ const Banner = () => {
   const fullText = " Professional Experience";
   
   const images = [
-    "/banner2.jpg",
+   "/banner3.png",
     "/banner.gif",
-    "/banner3.png",
+    
     "/banner4.png"
   ];
   const slideInterval = 5000; // 5 seconds
@@ -120,7 +120,7 @@ const Banner = () => {
         </Link>
           
           <a
-            href="tel:+1234567890"
+            href="tel:+8801909221707"
             className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-green-600 hover:bg-green-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"
             aria-label="Call us"
           >
@@ -129,7 +129,7 @@ const Banner = () => {
           </a>
           
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/8801909221707"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"

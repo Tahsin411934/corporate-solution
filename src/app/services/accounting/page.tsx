@@ -83,7 +83,7 @@ export default function AccountingAdvisoryPage() {
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>{detail}</span>
+                    <span className='text-gray-700'>{detail}</span>
                   </li>
                 ))}
               </ul>
@@ -134,7 +134,7 @@ export default function AccountingAdvisoryPage() {
       </section>
 
       {/* CTA Section */}
-      <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542] rounded-lg p-6 sm:p-8 text-white">
+      <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542] p-6 sm:p-8 text-white">
         <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Optimize Your Financial Operations</h3>
         <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
           Let our accounting experts streamline your financial management

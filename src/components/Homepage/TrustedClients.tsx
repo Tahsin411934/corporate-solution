@@ -26,7 +26,7 @@ const TrustedClients = () => {
             Trusted By Industry Leaders
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            We partner with Bangladesh's most respected organizations to deliver exceptional results
+            We partner with Bangladesh&apos;s most respected organizations to deliver exceptional results
           </p>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -72,8 +72,6 @@ const TrustedClients = () => {
               </div>
             ))}
           </div>
-
-          
         </div>
       </div>
     </section>

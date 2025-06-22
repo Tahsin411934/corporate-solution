@@ -3,11 +3,11 @@ import { BiPhoneIncoming } from 'react-icons/bi';
 import { TbMailBitcoin } from 'react-icons/tb';
 
 export const metadata: Metadata = {
-  title: "Trade License & Trademark Registration | Corporate Solution",
-  description: "Professional trade license acquisition and trademark registration services in Bangladesh. Secure your business identity legally.",
+  title: "Business Loan Processing Services | Corporate Solution",
+  description: "Professional loan processing and financial advisory services in Bangladesh. Secure funding for your business growth.",
 };
 
-export default function TradeLicenseTrademarkPage() {
+export default function LoanProcessingPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -25,9 +25,9 @@ export default function TradeLicenseTrademarkPage() {
           <div className="absolute inset-0"></div>
           
           <div className="container mx-auto px-4 top-6 text-center relative z-10">
-            <h1 className="text-xl md:text-4xl font-bold mb-4">Trade License & Trademark Services</h1>
+            <h1 className="text-xl md:text-4xl font-bold mb-4">Business Loan Processing Services</h1>
             <p className="text-sm md:text-xl max-w-2xl mx-auto">
-              Legal protection and compliance solutions for your business identity and operations
+              Expert financial solutions to secure funding for your business growth
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function TradeLicenseTrademarkPage() {
       {/* Services Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Licensing & Trademark Services</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Loan Processing Services</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
@@ -44,33 +44,33 @@ export default function TradeLicenseTrademarkPage() {
           {/* Service Cards */}
           {[
             {
-              title: "Trade License",
-              description: "Complete trade license acquisition and renewal services",
+              title: "Business Loan Facilitation",
+              description: "End-to-end support for business loan applications",
               details: [
-                "New trade license application",
-                "City Corporation/Municipal license",
-                "License category selection",
-                "Annual renewal processing"
+                "Bank loan application processing",
+                "Document preparation & submission",
+                "Financial statement analysis",
+                "Loan amount optimization"
               ]
             },
             {
-              title: "Trademark Registration",
-              description: "End-to-end trademark protection solutions",
+              title: "SME Financing",
+              description: "Specialized solutions for small and medium enterprises",
               details: [
-                "Trademark search & verification",
-                "Application filing with DPDT",
-                "Class selection guidance",
-                "Registration certificate acquisition"
+                "SME loan processing",
+                "Government stimulus packages",
+                "Collateral evaluation",
+                "Credit guarantee schemes"
               ]
             },
             {
-              title: "Compliance Package",
-              description: "Ongoing support for business legalities",
+              title: "Financial Advisory",
+              description: "Strategic guidance for financial planning",
               details: [
-                "License renewal reminders",
-                "Trademark monitoring",
-                "Infringement protection",
-                "Documentation updates"
+                "Loan product selection",
+                "Interest rate negotiation",
+                "Repayment planning",
+                "Financial health assessment"
               ]
             }
           ].map((service, index) => (
@@ -96,7 +96,7 @@ export default function TradeLicenseTrademarkPage() {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Trade License & Trademark FAQs</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Loan Processing FAQs</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
@@ -104,24 +104,24 @@ export default function TradeLicenseTrademarkPage() {
             {/* Question Blocks */}
             {[
               {
-                question: "What documents are needed for a trade license?",
-                answer: "NID copy, passport photos, proof of business address, rental agreement (if rented space), and previous license (for renewal)."
+                question: "What documents are needed for business loan applications?",
+                answer: "Trade license, TIN certificate, bank statements, financial statements, property documents (if collateral), and business plan."
               },
               {
-                question: "How long does trademark registration take in Bangladesh?",
-                answer: "Typically 8-12 months from application to registration certificate issuance, if no objections are raised."
+                question: "How long does loan approval typically take?",
+                answer: "Varies by bank and loan type - typically 2-4 weeks after complete documentation submission."
               },
               {
-                question: "What are the trade license fees?",
-                answer: "Varies by location (City Corp/Municipality), business type, and size - typically between 5,000-50,000 BDT annually."
+                question: "What interest rates can I expect for business loans?",
+                answer: "Current rates range from 9-15% depending on loan type, collateral, and your business financials."
               },
               {
-                question: "Can foreigners register trademarks in Bangladesh?",
-                answer: "Yes, through local agents. We can represent foreign entities in the trademark registration process."
+                question: "Can startups get business loans?",
+                answer: "Yes, though requirements are stricter. We help startups prepare strong applications and explore alternative financing."
               },
               {
-                question: "Why is trademark registration important?",
-                answer: "Protects your brand identity, prevents copying, adds business value, and is essential for franchising or selling your business."
+                question: "What's the advantage of using a loan processing service?",
+                answer: "Higher approval chances, better terms negotiation, time savings, and expert guidance through complex procedures."
               }
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
@@ -135,9 +135,9 @@ export default function TradeLicenseTrademarkPage() {
 
       {/* CTA Section */}
       <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542]  p-6 sm:p-8 text-white">
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Secure Your Business Identity Today</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Secure Funding For Your Business</h3>
         <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
-          Get expert assistance with trade licenses and trademark registration
+          Get expert assistance with loan applications and financial planning
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a

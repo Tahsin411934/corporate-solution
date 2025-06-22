@@ -5,6 +5,7 @@ interface ServiceCard {
   title: string;
   subtitle: string;
   icon: string;
+  link: string;
 }
 
 const Services = () => {
@@ -13,46 +14,55 @@ const Services = () => {
       title: "Tax & VAT Consultancy",
       subtitle: "Expert guidance on tax compliance and optimization",
       icon: "/icons/1.png",
+      link: '/services/tax',
     },
     {
       title: "Trade License & Trademark",
       subtitle: "Complete business registration and protection services",
       icon: "/icons/2.jpg",
+      link: '/services/license',
     },
     {
       title: "Export & Import License",
       subtitle: "Streamlined solutions for international trade",
       icon: "/icons/3.jpg",
+      link: '/services/exportimportlicense',
     },
     {
       title: "Accounting Service",
       subtitle: "Professional financial record keeping",
       icon: "/icons/4.webp",
+      link: '/services/accounting',
     },
     {
       title: "Company Audit",
       subtitle: "Comprehensive financial examination services",
       icon: "/icons/5.jpg",
+      link: '/services/audit',
     },
     {
       title: "Company Registration",
       subtitle: "End-to-end business incorporation assistance",
       icon: "/icons/6.jpg",
+      link: '/services/registration',
     },
     {
       title: "Company Profile",
       subtitle: "Professional business profile development",
       icon: "/icons/7.jpg",
+      link: '/services/registration',
     },
     {
       title: "Loan Processing",
       subtitle: "Efficient business financing solutions",
       icon: "/icons/8.jpg",
+      link: '/services/LoanProcessing',
     },
     {
       title: "Advisory Services",
       subtitle: "Strategic business consulting",
       icon: "/icons/9.webp",
+      link: '/services/Advisory',
     },
   ];
 
@@ -70,17 +80,16 @@ const Services = () => {
           <div className="w-20 h-1 bg-[#005FA5] mx-auto mt-4"></div>
         </div>
 
-        {/* Services Grid - Shows 8 cards on sm/md, 9 on lg+ */}
+        {/* Services Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-5 md:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               className={`bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col ${
-                // Hide the 9th card on small/medium screens
                 index === 8 ? "hidden lg:flex" : ""
               }`}
             >
-              {/* Service Image - Full width at top */}
+              {/* Service Image */}
               <div className="relative w-full h-32 md:h-48 bg-gray-100">
                 <Image
                   src={service.icon}
@@ -96,16 +105,31 @@ const Services = () => {
                 <h3 className="text-lg sm:text-base md:text-xl font-bold text-[#0D1542] mb-1 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-xs hidden md:flex sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 flex-grow">
                   {service.subtitle}
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 md:py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-xs sm:text-sm font-medium text-center"
-                  aria-label={`Learn more about ${service.title}`}
-                >
-                  Book Now
-                </Link>
+                
+                {/* Button Group */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                   <a
+                    href={`https://wa.me/8801909221707?text=Hello! I’m interested in your service: ${encodeURIComponent(
+                      service.title
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0D1542] text-white rounded-lg hover:bg-[#1a2a7a] transition-colors duration-300 text-xs sm:text-sm font-medium text-center"
+                    aria-label={`Book ${service.title} on WhatsApp`}
+                  >
+                    Book Now
+                  </a>
+                  <Link
+                    href={`${service.link.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
+                    className="flex-1 px-3 sm:px-4 py-1.5 sm:py-2 border border-[#0D1542] text-[#0D1542] rounded-lg hover:bg-gray-50 transition-colors duration-300 text-xs sm:text-sm font-medium text-center"
+                    aria-label={`See details about ${service.title}`}
+                  >
+                    See Details
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

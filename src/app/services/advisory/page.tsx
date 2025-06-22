@@ -3,11 +3,11 @@ import { BiPhoneIncoming } from 'react-icons/bi';
 import { TbMailBitcoin } from 'react-icons/tb';
 
 export const metadata: Metadata = {
-  title: "Trade License & Trademark Registration | Corporate Solution",
-  description: "Professional trade license acquisition and trademark registration services in Bangladesh. Secure your business identity legally.",
+  title: "Business Advisory Services | Corporate Solution",
+  description: "Professional business consulting and advisory services in Bangladesh. Strategic guidance for growth, compliance, and operational excellence.",
 };
 
-export default function TradeLicenseTrademarkPage() {
+export default function AdvisoryServicesPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -25,9 +25,9 @@ export default function TradeLicenseTrademarkPage() {
           <div className="absolute inset-0"></div>
           
           <div className="container mx-auto px-4 top-6 text-center relative z-10">
-            <h1 className="text-xl md:text-4xl font-bold mb-4">Trade License & Trademark Services</h1>
+            <h1 className="text-xl md:text-4xl font-bold mb-4">Business Advisory Services</h1>
             <p className="text-sm md:text-xl max-w-2xl mx-auto">
-              Legal protection and compliance solutions for your business identity and operations
+              Strategic consulting to optimize your business operations and growth
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function TradeLicenseTrademarkPage() {
       {/* Services Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Licensing & Trademark Services</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Advisory Services</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
@@ -44,37 +44,37 @@ export default function TradeLicenseTrademarkPage() {
           {/* Service Cards */}
           {[
             {
-              title: "Trade License",
-              description: "Complete trade license acquisition and renewal services",
+              title: "Business Strategy Consulting",
+              description: "Comprehensive planning for sustainable growth",
               details: [
-                "New trade license application",
-                "City Corporation/Municipal license",
-                "License category selection",
-                "Annual renewal processing"
+                "Market entry strategy",
+                "Business model optimization",
+                "Competitive analysis",
+                "Growth roadmap development"
               ]
             },
             {
-              title: "Trademark Registration",
-              description: "End-to-end trademark protection solutions",
+              title: "Regulatory Compliance",
+              description: "Ensuring full compliance with business regulations",
               details: [
-                "Trademark search & verification",
-                "Application filing with DPDT",
-                "Class selection guidance",
-                "Registration certificate acquisition"
+                "Legal compliance audit",
+                "Regulatory change management",
+                "Policy framework development",
+                "Corporate governance advisory"
               ]
             },
             {
-              title: "Compliance Package",
-              description: "Ongoing support for business legalities",
+              title: "Operational Excellence",
+              description: "Streamlining your business operations",
               details: [
-                "License renewal reminders",
-                "Trademark monitoring",
-                "Infringement protection",
-                "Documentation updates"
+                "Process optimization",
+                "Cost reduction strategies",
+                "Supply chain management",
+                "Performance benchmarking"
               ]
             }
           ].map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
+            <div key={index} className="bg-white p-6  shadow-md border-t-4 border-blue-600">
               <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <ul className="space-y-2">
@@ -96,7 +96,7 @@ export default function TradeLicenseTrademarkPage() {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Trade License & Trademark FAQs</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Business Advisory FAQs</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 
@@ -104,24 +104,24 @@ export default function TradeLicenseTrademarkPage() {
             {/* Question Blocks */}
             {[
               {
-                question: "What documents are needed for a trade license?",
-                answer: "NID copy, passport photos, proof of business address, rental agreement (if rented space), and previous license (for renewal)."
+                question: "When should a business consider advisory services?",
+                answer: "During startup phase, when facing operational challenges, planning expansion, or when regulatory changes affect your business model."
               },
               {
-                question: "How long does trademark registration take in Bangladesh?",
-                answer: "Typically 8-12 months from application to registration certificate issuance, if no objections are raised."
+                question: "What's the typical engagement process?",
+                answer: "Initial assessment → problem identification → solution design → implementation support → follow-up evaluation."
               },
               {
-                question: "What are the trade license fees?",
-                answer: "Varies by location (City Corp/Municipality), business type, and size - typically between 5,000-50,000 BDT annually."
+                question: "How do you measure the impact of advisory services?",
+                answer: "Through KPIs like cost savings, revenue growth, process efficiency gains, and compliance improvement metrics."
               },
               {
-                question: "Can foreigners register trademarks in Bangladesh?",
-                answer: "Yes, through local agents. We can represent foreign entities in the trademark registration process."
+                question: "Can you help with international business expansion?",
+                answer: "Yes, we provide cross-border market analysis, regulatory guidance, and partnership development support."
               },
               {
-                question: "Why is trademark registration important?",
-                answer: "Protects your brand identity, prevents copying, adds business value, and is essential for franchising or selling your business."
+                question: "What industries do you specialize in?",
+                answer: "Manufacturing, trading, IT, healthcare, logistics, and professional services across various sectors."
               }
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
@@ -134,10 +134,10 @@ export default function TradeLicenseTrademarkPage() {
       </section>
 
       {/* CTA Section */}
-      <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542]  p-6 sm:p-8 text-white">
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Secure Your Business Identity Today</h3>
+      <div className="mt-12 mb-6 sm:mt-16 text-center bg-[#0D1542] rounded-lg p-6 sm:p-8 text-white">
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Transform Your Business Strategy</h3>
         <p className="text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
-          Get expert assistance with trade licenses and trademark registration
+          Get expert advisory services tailored to your business needs
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a
