@@ -39,8 +39,8 @@ const CorporateHeader = () => {
           { href: "/services/exportimportlicense", label: "Export & Import License" },
           { href: "/services/audit", label: "Company Audit" },
           { href: "/services/accounting", label: "Accounting Services" },
-          { href: "/services/LoanProcessing", label: "Loan Processing" },
-          { href: "/services/Advisory ", label: "Advisory Services" },
+          { href: "/services/loanprocessing", label: "Loan Processing" },
+          { href: "/services/advisory ", label: "Advisory Services" },
         ]
       },
       { href: "/contact", label: "Contact Us" },
