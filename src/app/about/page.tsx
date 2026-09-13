@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="bg-white border-b border-gray-200 py-8 sm:py-12 md:py-16 relative">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-950 mb-3 sm:mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-blue-950 mb-3 sm:mb-4">
               About Corporate Solutions
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
@@ -46,7 +46,7 @@ export default function AboutPage() {
               Founded in 2010, Corporate Solutions began as a small consultancy firm in Chittagong with a vision to transform business operations through innovative solutions.
             </p>
             <p className="text-gray-700 text-sm sm:text-base mb-3 sm:mb-4">
-              Today, we've grown into a trusted partner for over 500 businesses across Bangladesh, helping them navigate complex challenges and achieve sustainable growth.
+              Today, we&apos;ve grown into a trusted partner for over 5000+ businesses across Bangladesh, helping them navigate complex challenges and achieve sustainable growth.
             </p>
             <p className="text-gray-700 text-sm sm:text-base mb-6 sm:mb-8">
               Our journey has been marked by relentless pursuit of excellence, adapting to changing market dynamics while maintaining our core values of integrity and client-first approach.
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-xs sm:text-sm">Years Experience</p>
               </div>
               <div className="bg-blue-50 px-3 py-2 sm:px-4 sm:py-3 rounded-lg">
-                <p className="text-blue-800 font-bold text-lg sm:text-xl">500+</p>
+                <p className="text-blue-800 font-bold text-lg sm:text-xl">50000+</p>
                 <p className="text-gray-600 text-xs sm:text-sm">Satisfied Clients</p>
               </div>
               <div className="bg-blue-50 px-3 py-2 sm:px-4 sm:py-3 rounded-lg">
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <h3 className="text-lg sm:text-xl text-blue-950 font-bold">Our Vision</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base">
-                To be Bangladesh's most trusted business solutions provider, recognized for transforming challenges into opportunities through innovation and strategic thinking.
+                To be Bangladesh&apos;s most trusted business solutions provider, recognized for transforming challenges into opportunities through innovation and strategic thinking.
               </p>
             </div>
             <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow">

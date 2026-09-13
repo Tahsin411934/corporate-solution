@@ -71,7 +71,7 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0D1542] mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-[#0D1542] mb-3 sm:mb-4">
             Professional Services
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6">

@@ -36,7 +36,7 @@ export default function AdvisoryServicesPage() {
       {/* Services Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Advisory Services</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Our Advisory Services</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
@@ -96,7 +96,7 @@ export default function AdvisoryServicesPage() {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Business Advisory FAQs</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Business Advisory FAQs</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 

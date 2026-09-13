@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaArrowRight } from "react-icons/fa";
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -12,9 +12,9 @@ const Banner = () => {
   const fullText = " Professional Experience";
   
   const images = [
-   "/banner3.png",
+    "/banner3.png",
     "/banner.gif",
-    
+    "/banner3.png",
     "/banner4.png"
   ];
   const slideInterval = 5000; // 5 seconds
@@ -99,44 +99,55 @@ const Banner = () => {
 
       {/* Content overlay */}
       <div className="relative z-[2] h-full flex flex-col justify-center items-start px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-white">
+        {/* Tagline */}
+        <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-2 sm:mb-3">
+          <p className="text-xs sm:text-sm font-medium text-blue-100">Trusted Business Solutions</p>
+        </div>
         
-        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight sm:leading-snug md:leading-tight mb-2 sm:mb-4 max-w-3xl">
+        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold leading-tight sm:leading-snug md:leading-tight mb-2 sm:mb-4 max-w-3xl">
           License & Registration, VAT & Taxation, Legal Services
         </h1>
+        
         <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-gray-100">
           Expert consultation for all your business needs
         </p>
+        
         <p className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 uppercase tracking-wider text-blue-200 min-h-[24px]">
-         13 Years of {displayText}
+          13 Years of {displayText}
           <span className={`inline-block w-1 h-5 sm:h-6 bg-blue-400 ml-1 align-middle ${isTyping ? 'opacity-100' : 'opacity-0'}`}></span>
         </p>
-        <div className="flex flex-row gap-2 w-full sm:w-auto">
-           <Link
-          href="/contact"
-          className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#005FA5] hover:bg-blue-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
-          aria-label="Book your services now"
-        >
-          Book Your Services
-        </Link>
+        
+        <div className="flex flex-row gap-3 w-full sm:w-auto">
+          <Link
+            href="/contact"
+            className="group relative px-5 py-2.5 sm:px-6 sm:py-3 bg-[#005FA5] hover:bg-blue-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2 overflow-hidden"
+            aria-label="Book your services now"
+          >
+            <span className="relative z-10">Book Your Services</span>
+            <FaArrowRight className="relative z-10 text-xs sm:text-sm transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+          </Link>
           
           <a
             href="tel:+8801909221707"
-            className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-green-600 hover:bg-green-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"
+            className="group relative px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-br from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
             aria-label="Call us"
           >
-            <FaPhone className="text-sm sm:text-base" />
-            <span className="hidden sm:inline">Call Us</span>
+            <span className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-all duration-300 rounded-lg"></span>
+            <FaPhone className="relative z-10 text-sm sm:text-base" />
+            <span className="relative z-10 hidden sm:inline">Call Us</span>
           </a>
           
           <a
             href="https://wa.me/8801909221707"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2"
+            className="group relative px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-br from-[#128C7E] to-[#075E54] hover:from-[#25D366] hover:to-[#128C7E] transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
             aria-label="Chat on WhatsApp"
           >
-            <FaWhatsapp className="text-sm sm:text-base" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            <span className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-all duration-300 rounded-lg"></span>
+            <FaWhatsapp className="relative z-10 text-sm sm:text-base" />
+            <span className="relative z-10 hidden sm:inline">WhatsApp</span>
           </a>
         </div>
       </div>

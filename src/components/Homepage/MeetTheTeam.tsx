@@ -14,7 +14,7 @@ const MeetTheTeam = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0D1542] mb-4">
+          <h2 className="text-3xl md:text-3xl font-bold text-[#0D1542] mb-4">
             Meet Our Leadership
           </h2>
           <div className="w-24 h-1 bg-[#005FA5] mx-auto"></div>
@@ -67,7 +67,7 @@ const MeetTheTeam = () => {
               {/* Enhanced Social Links */}
               <div className="flex flex-wrap gap-3">
                 <a 
-                  href="https://www.linkedin.com/in/example" 
+                  href="https://www.linkedin.com/in/jahid-hossain-452aa0202/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0077B5] text-white hover:bg-[#005FA5] transition-colors"
@@ -77,7 +77,7 @@ const MeetTheTeam = () => {
                   <FaLinkedin className="h-4 w-4" />
                 </a>
                 <a 
-                  href="https://twitter.com/example" 
+                  href="https://www.facebook.com/jahid.hossain.355744" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1DA1F2] text-white hover:bg-[#1a8cd8] transition-colors"
@@ -87,7 +87,7 @@ const MeetTheTeam = () => {
                   <FaTwitter className="h-4 w-4" />
                 </a>
                 <a 
-                  href="https://facebook.com/example" 
+                  href="https://www.facebook.com/jahid.hossain.355744" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-[#4267B2] text-white hover:bg-[#365899] transition-colors"
@@ -97,7 +97,7 @@ const MeetTheTeam = () => {
                   <FaFacebookF className="h-4 w-4" />
                 </a>
                 <a 
-                  href="https://wa.me/1234567890" 
+                  href="https://wa.me/8801909221707" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:bg-[#1da851] transition-colors"
@@ -107,7 +107,7 @@ const MeetTheTeam = () => {
                   <FaWhatsapp className="h-4 w-4" />
                 </a>
                 <a 
-                  href="mailto:ceo@corporatesolution.com" 
+                  href="jahid7.hossain@gmail.com" 
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-[#D44638] text-white hover:bg-[#ba3a2e] transition-colors"
                   aria-label="Email CEO"
                   title="Email"
@@ -115,7 +115,7 @@ const MeetTheTeam = () => {
                   <FaEnvelope className="h-4 w-4" />
                 </a>
                 <a 
-                  href="https://yourcompanywebsite.com" 
+                  href="http://corporatesolutionsbd.com/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="lg:flex hidden items-center justify-center w-10 h-10 rounded-full bg-[#0D1542] text-white hover:bg-[#005FA5] transition-colors"

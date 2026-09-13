@@ -27,7 +27,7 @@ const CorporateHeader = () => {
         submenu: [
           { href: "/about", label: "About Us" },
           { href: "/team", label: "Our Team" },
-          { href: "/mission", label: "Mission & Vision" }
+          
         ]
       },
       { 
@@ -49,7 +49,7 @@ const CorporateHeader = () => {
         submenu: [
           { href: "/client/login", label: "Client Login" },
           { href: "/client/register", label: "Register" },
-          { href: "/client/dashboard", label: "Dashboard" }
+          { href: "https://portal.khudebarta.com/", label: "Portal" }
         ]
       }
     ]
