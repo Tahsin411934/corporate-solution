@@ -30,7 +30,7 @@
 .note > svg { width: 40px; height: 40px; color: var(--gold); margin-bottom: 18px; }
 .note > span { display: block; font-family: inherit; font-style: italic; font-size: 36px; line-height: 1.25; }
 .note small { display: block; font-size: 9px; letter-spacing: .16em; line-height: 1.8; margin-top: 20px; }
-.controls { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 18px; }
+.controls { z-index: 2; position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 18px; }
 .counter { font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .counter span { color: #c2d0e4; }
 .dots { display: flex; }
@@ -91,10 +91,10 @@
 /* Positions follow the supplied 1024 x 1536 portrait; header occupies 144px. */
 @media (max-width: 640px) {
   .banner { min-height: 135.9375vw; position: relative; }
-  .banner[data-theme='navy'] { background: url('/images/hero-reference-mobile.png') center bottom / 100% auto no-repeat; }
+  .banner { --gold: #ffc640; background: url('/images/hero-reference-mobile.png') center bottom / 100% auto no-repeat; }
   .hero { min-height: 118vw; }
-  .banner[data-theme='navy'] .hero { background: transparent; }
-  .banner[data-theme='navy'] .picture, .banner[data-theme='navy'] .overlay, .banner[data-theme='navy'] .note { display: none; }
+  .banner .hero { background: transparent; }
+  .banner .picture, .banner .overlay, .banner .note { display: none; }
   .container { min-height: 118vw; padding: 0 5.7vw; }
   .content { min-height: 110vw; }
   .eyebrow { position: absolute; top: 8.6vw; left: 0; max-width: 43vw; font-size: 2.5vw; line-height: 1.25; margin: 0; }
@@ -109,8 +109,13 @@
   .primary { min-height: 0; height: 8.6vw; padding: 0 5.5vw; font-size: 2.9vw; gap: 2.4vw; }
   .controls { bottom: 3vw; }
   .stats { min-height: 17.9375vw; margin: 0; padding: 4vw 6vw; border: 0; border-radius: 0; }
-  .banner[data-theme='navy'] .stats { background: transparent; }
+  .banner .stats { background: transparent; }
   .stats > div { padding: 0 1.5vw; }
   .stats dd { font-size: 3.8vw; }
   .stats dt { font-size: 1.9vw; padding-left: 6.1vw; }
+}
+
+@media (max-width: 640px) {
+  .banner .hero { --gold: #ffc640; }
+  .content h1 em { display: block; white-space: nowrap; }
 }
