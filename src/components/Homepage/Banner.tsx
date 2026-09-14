@@ -1,175 +1,106 @@
-'use client';
+﻿'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { FaPhone, FaWhatsapp, FaArrowRight } from "react-icons/fa";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import type { IconType } from 'react-icons';
+import { FiArrowUpRight, FiFileText, FiShield, FiPercent, FiUsers, FiBarChart, FiArrowRight, FiPause, FiPlay } from 'react-icons/fi';
+import { FaPhone, FaWhatsapp } from 'react-icons/fa';
+import styles from './Banner.module.css';
 
-const Banner = () => {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const [displayText, setDisplayText] = useState<string>("");
-  const [isTyping, setIsTyping] = useState<boolean>(true);
-  const fullText = " Professional Experience";
-  
-  const images = [
-    "/banner3.png",
-    "/banner.gif",
-    "/banner3.png",
-    "/banner4.png"
-  ];
-  const slideInterval = 5000; // 5 seconds
-
-  // Auto-rotate slides
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, slideInterval);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  // Typewriter effect
-  useEffect(() => {
-    let currentIndex = 0;
-    let typingInterval: NodeJS.Timeout;
-
-    const typeText = () => {
-      if (currentIndex <= fullText.length) {
-        setDisplayText(fullText.substring(0, currentIndex));
-        currentIndex++;
-        typingInterval = setTimeout(typeText, 100);
-      } else {
-        setIsTyping(false);
-        setTimeout(() => {
-          setIsTyping(true);
-          deleteText();
-        }, 3000);
-      }
-    };
-
-    const deleteText = () => {
-      if (currentIndex >= 0) {
-        setDisplayText(fullText.substring(0, currentIndex));
-        currentIndex--;
-        typingInterval = setTimeout(deleteText, 50);
-      } else {
-        setIsTyping(true);
-        setTimeout(typeText, 1000);
-      }
-    };
-
-    typeText();
-
-    return () => {
-      clearTimeout(typingInterval);
-    };
-  }, []);
-
-  // Manual slide navigation
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  return (
-    <div className="relative w-full h-[320px] sm:h-[380px] md:h-[500px] bg-[#0c1a5e] overflow-hidden shadow-lg">
-      {/* Background Images with sliding effect */}
-      {images.map((src, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            currentSlide === index 
-              ? "opacity-100 z-0" 
-              : "opacity-0 pointer-events-none z-0"
-          }`}
-        >
-          <Image
-            src={src}
-            alt={`Business Services Banner ${index + 1}`}
-            fill
-            priority={index === 0}
-            quality={100}
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
-          />
-        </div>
-      ))}
-
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/30 z-[1]" />
-
-      {/* Content overlay */}
-      <div className="relative z-[2] h-full flex flex-col justify-center items-start px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 text-white">
-        {/* Tagline */}
-        <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-2 sm:mb-3">
-          <p className="text-xs sm:text-sm font-medium text-blue-100">Trusted Business Solutions</p>
-        </div>
-        
-        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold leading-tight sm:leading-snug md:leading-tight mb-2 sm:mb-4 max-w-3xl">
-          License & Registration, VAT & Taxation, Legal Services
-        </h1>
-        
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 text-gray-100">
-          Expert consultation for all your business needs
-        </p>
-        
-        <p className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 uppercase tracking-wider text-blue-200 min-h-[24px]">
-          13 Years of {displayText}
-          <span className={`inline-block w-1 h-5 sm:h-6 bg-blue-400 ml-1 align-middle ${isTyping ? 'opacity-100' : 'opacity-0'}`}></span>
-        </p>
-        
-        <div className="flex flex-row gap-3 w-full sm:w-auto">
-          <Link
-            href="/contact"
-            className="group relative px-5 py-2.5 sm:px-6 sm:py-3 bg-[#005FA5] hover:bg-blue-700 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2 overflow-hidden"
-            aria-label="Book your services now"
-          >
-            <span className="relative z-10">Book Your Services</span>
-            <FaArrowRight className="relative z-10 text-xs sm:text-sm transition-transform duration-300 group-hover:translate-x-1" />
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-          </Link>
-          
-          <a
-            href="tel:+8801909221707"
-            className="group relative px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-br from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
-            aria-label="Call us"
-          >
-            <span className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-all duration-300 rounded-lg"></span>
-            <FaPhone className="relative z-10 text-sm sm:text-base" />
-            <span className="relative z-10 hidden sm:inline">Call Us</span>
-          </a>
-          
-          <a
-            href="https://wa.me/8801909221707"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-br from-[#128C7E] to-[#075E54] hover:from-[#25D366] hover:to-[#128C7E] transition-all duration-300 rounded-lg text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
-            aria-label="Chat on WhatsApp"
-          >
-            <span className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-all duration-300 rounded-lg"></span>
-            <FaWhatsapp className="relative z-10 text-sm sm:text-base" />
-            <span className="relative z-10 hidden sm:inline">WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-      {/* Slide indicators (dots) - Smaller on mobile */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-[2] flex space-x-1 sm:space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-              currentSlide === index 
-                ? "bg-white sm:w-6" 
-                : "bg-white/50 hover:bg-white/70"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={currentSlide === index}
-          />
-        ))}
-      </div>
-    </div>
-  );
+export type HeroSlide = {
+  desktopImage: string;
+  mobileImage: string;
+  imageAlt: string;
+  eyebrow: string;
+  title: string;
+  highlightedText: string;
+  titleSuffix: string;
+  description: string;
+  services: { label: string; icon: IconType }[];
+  primaryButton: { label: string; href: string };
+  theme: 'navy' | 'blue' | 'midnight' | 'sky';
+  note: string;
 };
 
-export default Banner;
+const services = [
+  { label: 'Business Registration', icon: FiFileText },
+  { label: 'VAT & Tax Consultancy', icon: FiPercent },
+  { label: 'Legal Services', icon: FiUsers },
+  { label: 'Ongoing Support', icon: FiBarChart },
+];
+const primaryButton = { label: 'Book a Consultation', href: '/contact' };
+const slides: HeroSlide[] = [
+  { desktopImage: '/images/hero-registration-desktop.webp', mobileImage: '/images/hero-registration-mobile.webp', imageAlt: 'Business desk overlooking a waterfront city', eyebrow: 'Simple solutions for a stronger tomorrow', title: 'Business Registration,', highlightedText: 'Tax & Legal', titleSuffix: ' Support', description: 'Expert consultation for all your business needs in Bangladesh.', services, primaryButton, theme: 'navy', note: 'Grow. Comply. Succeed.' },
+  { desktopImage: '/b2.png', mobileImage: '/b2.png', imageAlt: 'Waterfront office terrace overlooking the city and bridge at sunset', eyebrow: 'Clarity for every business decision', title: 'VAT & Tax Consultancy,', highlightedText: 'Made Simple.', titleSuffix: '', description: 'Navigate VAT, tax returns and business accounting with clear, practical guidance.', services, primaryButton, theme: 'blue', note: 'Clarity. Confidence. Progress.' },
+  { desktopImage: '/images/hero-legal-desktop.webp', mobileImage: '/images/hero-legal-mobile.webp', imageAlt: 'Waterfront offices at sunset', eyebrow: 'A stronger foundation for your business', title: 'Legal & Compliance,', highlightedText: 'Move Forward', titleSuffix: ' Confidently.', description: 'Get support with company registration, trade licenses and your legal obligations.', services, primaryButton, theme: 'midnight', note: 'Built on trust.' },
+  { desktopImage: '/b4.png', mobileImage: '/b4.png', imageAlt: 'Blue glass office buildings illuminated at dusk', eyebrow: 'Your next chapter starts here', title: 'Business Advisory,', highlightedText: 'Ideas Into', titleSuffix: ' Growth.', description: 'Practical advice and ongoing support for every stage of your business journey.', services, primaryButton, theme: 'sky', note: 'A partner in your progress.' },
+];
+
+export default function Banner({ items = slides }: { items?: HeroSlide[] }) {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(true);
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setReducedMotion(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+  useEffect(() => {
+    if (paused || hovered || focused || reducedMotion || items.length < 2) return;
+    const timer = window.setInterval(() => {
+      if (!document.hidden) setCurrent(value => (value + 1) % items.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [paused, hovered, focused, reducedMotion, items.length]);
+  const slide = items[current % items.length];
+  if (!slide) return null;
+  const stopped = paused || reducedMotion;
+
+  return (
+    <section data-theme={slide.theme} className={styles.banner} aria-label="Business consultancy services">
+      <div className={styles.hero} data-theme={slide.theme} aria-roledescription="carousel"
+        onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+        onFocusCapture={() => setFocused(true)}
+        onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
+        <picture className={styles.picture} key={slide.desktopImage}>
+          <source media="(max-width: 640px)" srcSet={slide.mobileImage} />
+          <Image src={slide.desktopImage} alt={slide.imageAlt} fill sizes="100vw" loading="eager" fetchPriority={current === 0 ? 'high' : 'auto'} unoptimized className={styles.image} />
+        </picture>
+        <div className={styles.overlay} />
+        <div className={styles.container}>
+          <div className={styles.content} key={current} aria-live={stopped ? 'polite' : 'off'} aria-atomic="true">
+            <p className={styles.eyebrow}><span />{slide.eyebrow}</p>
+            <h1>{slide.title}<br /><em>{slide.highlightedText}</em><span className={styles.titleSuffix}>{slide.titleSuffix}</span></h1>
+            <p className={styles.description}>{slide.description}</p>
+            <ul className={styles.services}>
+              {slide.services.map(({ label, icon: Icon }) => <li key={label}><span className={styles.serviceIcon}><Icon aria-hidden="true" /></span><span>{label}</span></li>)}
+            </ul>
+            <div className={styles.actions}>
+              <Link className={styles.primary} href={slide.primaryButton.href}>{slide.primaryButton.label}<FiArrowRight aria-hidden="true" /></Link>
+              <div className={styles.contact}>
+                <a href="tel:+8801909221707" aria-label="Call Corporate Solution"><FaPhone aria-hidden="true" /><span>Call us</span></a>
+                <a href="https://wa.me/8801909221707" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><FaWhatsapp aria-hidden="true" /><span>WhatsApp</span></a>
+              </div>
+            </div>
+          </div>
+          <div className={styles.note} aria-hidden="true"><FiArrowUpRight /><span>{slide.note}</span><small>CORPORATE SOLUTION · BANGLADESH</small></div>
+        </div>
+        {items.length > 1 && <div className={styles.controls}>
+          <span className={styles.counter} aria-hidden="true">0{current % items.length + 1} <span>/ 0{items.length}</span></span>
+          <div className={styles.dots}>{items.map((item, index) => <button key={item.desktopImage} onClick={() => setCurrent(index)} aria-label={`Show slide ${index + 1}: ${item.title}`} aria-current={current % items.length === index}><span /></button>)}</div>
+          <button className={styles.play} onClick={() => { setPaused(!stopped); if (reducedMotion) setReducedMotion(false); }} aria-label={stopped ? 'Play slideshow' : 'Pause slideshow'}>{stopped ? <FiPlay /> : <FiPause />}</button>
+        </div>}
+      </div>
+      <dl className={styles.stats}>
+        <div><dt>Years of Experience</dt><dd><FiShield aria-hidden="true" />13<span>+</span></dd></div>
+        <div><dt>Happy Clients</dt><dd><FiUsers aria-hidden="true" />500<span>+</span></dd></div>
+        <div><dt>Client Satisfaction</dt><dd><FiBarChart aria-hidden="true" />98<span>%</span></dd></div>
+      </dl>
+    </section>
+  );
+}

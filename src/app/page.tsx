@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 export default function Home() {
   return (
     <>
-      <div className="pt-16">
+      <div className="homepage-banner-offset pt-16">
         <Banner />
       </div>
       <Services/>

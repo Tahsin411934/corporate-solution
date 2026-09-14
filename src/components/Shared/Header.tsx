@@ -107,12 +107,12 @@ const CorporateHeader = () => {
   };
 
   return (
-    <header className="bg-white fixed w-full z-20 shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-3">
+    <header className="site-header bg-white fixed w-full z-20 shadow-md">
+      <div className="header-container container mx-auto px-4">
+        <div className="header-row flex justify-between items-center py-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center" onClick={closeAllMenus}>
-            <div className="w-10 h-10 relative mr-2">
+          <Link href="/" className="header-brand flex items-center" onClick={closeAllMenus}>
+            <div className="header-logo w-10 h-10 relative mr-2">
               <Image
                 src="/logo.png"
                 alt="Corporate Solution Logo"
@@ -121,9 +121,7 @@ const CorporateHeader = () => {
                 priority
               />
             </div>
-            <span className="lg:text-2xl text-base font-bold italic text-[#00026E]">
-              CORPORATE <span className="text-yellow-600">SOLUTION</span>
-            </span>
+            <span className="header-wordmark"><span className="header-name block lg:text-2xl text-base font-bold italic text-[#00026E]">CORPORATE <span className="text-yellow-600">SOLUTION</span></span><span className="header-tagline">YOUR BUSINESS PARTNER</span></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -208,7 +206,7 @@ const CorporateHeader = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
+          <div className="header-mobile-actions lg:hidden flex items-center space-x-4">
             <a
               href={`tel:${contactNumber}`}
               className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
@@ -220,7 +218,7 @@ const CorporateHeader = () => {
             <button
               onClick={toggleMobileMenu}
               className="text-[#00026E] focus:outline-none mobile-menu-button"
-              aria-label="Toggle menu"
+              aria-label="Toggle menu" aria-controls="mobile-navigation"
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
@@ -240,7 +238,7 @@ const CorporateHeader = () => {
           onClick={closeAllMenus}
         >
           <div
-            className="absolute top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-xl"
+            id="mobile-navigation" className="absolute top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-xl"
             ref={mobileMenuRef}
             onClick={(e) => e.stopPropagation()}
           >

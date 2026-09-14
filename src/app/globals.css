@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-mono: monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +22,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.header-tagline { display: none; }
+@media (max-width: 640px) {
+  .site-header { box-shadow: none; background: linear-gradient(110deg, #fff, #f2faff, #fff); }
+  .site-header .header-container { padding: 0 5.7vw; }
+  .header-row { height: max(56px, 14.0625vw); padding: 0; gap: 2vw; }
+  .header-brand { min-width: 0; gap: 2vw; }
+  .header-logo { width: 8vw; height: 8vw; flex-shrink: 0; margin: 0; }
+  .header-name { font-size: 3.45vw; white-space: nowrap; letter-spacing: -.04em; }
+  .header-tagline { display: block; font-size: 1.7vw; letter-spacing: .35em; color: #151515; margin-top: .35vw; text-align: center; }
+  .header-mobile-actions { gap: 3.5vw; margin: 0; }
+  .header-mobile-actions > a { width: 8vw; height: 8vw; margin: 0; color: #003d80; }
+  .header-mobile-actions > a svg { width: 3.5vw; height: 3.5vw; }
+  .header-mobile-actions > button { display: grid; place-items: center; width: 6vw; min-height: 44px; margin: 0; }
+  .header-mobile-actions > button svg { width: 5vw; height: 5vw; }
+  .homepage-banner-offset { padding-top: max(56px, 14.0625vw); }
 }

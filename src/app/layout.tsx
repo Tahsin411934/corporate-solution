@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "@/components/Shared/Header";
 import Footer from "@/components/Homepage/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 // Viewport settings (replaces the old metadata viewport and themeColor)
 export const viewport: Viewport = {
@@ -72,7 +72,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="white">
-      <body className={`${inter.className} bg-white text-gray-900`}>
+      <body className={`${inter.variable} ${inter.className} bg-white text-gray-900`}>
         <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
