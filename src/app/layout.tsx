@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { FaWhatsapp } from "react-icons/fa";
 import "./globals.css";
 import Header from "@/components/Shared/Header";
 import Footer from "@/components/Homepage/Footer";
@@ -83,6 +84,16 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+
+        <a
+          href="https://wa.me/8801909221707"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-green-500/30 transition-transform duration-200 hover:scale-105 sm:flex lg:hidden"
+        >
+          <FaWhatsapp className="text-2xl" />
+        </a>
       </body>
     </html>
   );
